@@ -40,13 +40,12 @@ python pdf_to_img.py
 
 ### to install wkhtmltopdf on linux
 
-    ```bash
-    sudo apt-get install wkhtmltopdf
-    ```
+```bash
+sudo apt-get install wkhtmltopdf
+```
 
 ### Finally run the following command to convert but make sure to change the file names in the script
 
 ```bash
-
 python html_to_pdf.py
 ```
