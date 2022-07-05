@@ -33,3 +33,20 @@ pip install -r requirements.txt
 ```bash
 python convert_pdf_to_image.py
 ```
+
+# Converting html eithe local or site to pdf
+
+## for this you need pdfkit and wkhtmltopdf
+
+### to install wkhtmltopdf on linux
+
+    ```bash
+    sudo apt-get install wkhtmltopdf
+    ```
+
+### Finally run the following command to convert but make sure to change the file names in the script
+
+```bash
+
+python html_to_pdf.py
+```
