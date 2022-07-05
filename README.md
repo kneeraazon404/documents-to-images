@@ -31,10 +31,10 @@ pip install -r requirements.txt
 ### replace the file name with your pdf file name
 
 ```bash
-python convert_pdf_to_image.py
+python pdf_to_img.py
 ```
 
-# Converting html eithe local or site to pdf
+## Converting html, either local or site to pdf
 
 ## for this you need pdfkit and wkhtmltopdf
 

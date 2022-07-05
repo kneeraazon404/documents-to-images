@@ -1,6 +1,8 @@
 # To convert docs, pptx to pdf
 
-## installation
+## To convert docs to pdf
+
+### installation
 
 ### install cups-pdf
 
@@ -19,7 +21,7 @@
 #### for single file conversion
 
 ```bash
-    lowriter --convert-to pdf filename.docx
+    lowriter --convert-to pdf sample.docx
 ```
 
 #### for multiple file  conversion  (it can be doc or docx both)
@@ -27,3 +29,17 @@
 ```bash
     lowriter --convert-to pdf *.doc
 ```
+
+## To convert pptx to pdf
+
+```bash
+    soffice --headless --convert-to pdf sample.pptx
+
+```
+
+## To convert txt to pdf
+
+```bash
+    soffice --headless --convert-to pdf sample.txt
+
+    ```
