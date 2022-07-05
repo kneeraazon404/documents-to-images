@@ -1,4 +1,4 @@
-# to convert docs, pptx to pdf with
+# To convert docs, pptx to pdf
 
 ## installation
 
