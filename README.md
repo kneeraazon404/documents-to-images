@@ -1,51 +1,96 @@
-# DocumentsToImages
+# Documents to images  
 
-Converting Documents to Images using Python
+## Overview  
 
-## Clone the repo and  cd into DocumentsToImages
+**documents-to-images** is a Python-based project aimed at converting various document formats (such as PDFs and Word files) into images. This tool is useful for generating image previews or ensuring compatibility in environments where document viewers are unavailable.  
 
-```bash
-cd DocumentsToImages
-```
+---
 
-## Create a virtual env for DocumentsToImages
+## Features  
 
-```bash
-python -m venv venv
-```
+- **Document Conversion**:  
+  - Converts PDFs and Word documents into image formats like PNG or JPEG.  
+  - Supports multi-page documents with efficient processing.  
 
-## Activate the virtual env for linux and mac
+- **Customizable Output**:  
+  - Configure image resolution and format.  
+  - Generate individual images for each page of a document.  
 
-```bash
-source venv/bin/activate
-```
+- **Simple Interface**:  
+  - Clean and user-friendly design for ease of use.  
 
-## Install the dependencies with
+---
 
-```bash
-pip install -r requirements.txt
-```
+## Technology Stack  
 
-## Copy your pdf file to the DocumentsToImages/Scripts/documents  folder
+- **Frontend**: HTML  
+- **Backend**: Python  
 
-### replace the file name with your pdf file name
+---
 
-```bash
-python pdf_to_img.py
-```
+## Getting Started  
 
-## Converting html, either local or site to pdf
+### Prerequisites  
 
-## for this you need pdfkit and wkhtmltopdf
+Ensure the following are installed:  
+- Python 3.8 or higher  
+- pip (Python package manager)  
 
-### to install wkhtmltopdf on linux
+### Installation  
 
-```bash
-sudo apt-get install wkhtmltopdf
-```
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/kneeraazon404/documents-to-images.git  
+   cd documents-to-images  
+   ```  
 
-### Finally run the following command to convert but make sure to change the file names in the script
+2. Create and activate a virtual environment:  
+   ```bash  
+   python -m venv venv  
+   source venv/bin/activate  # On Windows: venv\Scripts\activate  
+   ```  
 
-```bash
-python html_to_pdf.py
-```
+3. Install dependencies:  
+   ```bash  
+   pip install -r requirements.txt  
+   ```  
+
+4. Run the conversion script:  
+   ```bash  
+   python convert.py  
+   ```  
+
+---
+
+## License  
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.  
+
+---
+
+## Contributions  
+
+Contributions are welcome! To contribute:  
+
+1. Fork the repository.  
+2. Create a feature branch:  
+   ```bash  
+   git checkout -b feature-name  
+   ```  
+3. Commit your changes:  
+   ```bash  
+   git commit -m "Add feature-name"  
+   ```  
+4. Push to your fork:  
+   ```bash  
+   git push origin feature-name  
+   ```  
+5. Open a pull request detailing your changes.  
+
+---
+
+## Contact  
+
+For support or inquiries:  
+- **GitHub**: [kneeraazon404](https://github.com/kneeraazon404)  
+- **Email**: kneeraazon@gmail.com  
