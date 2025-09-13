@@ -1,0 +1,36 @@
+# Default output settings
+output:
+  image_format: "jpeg"
+  image_quality: 95
+  image_dpi: 200
+  pdf_quality: "high"
+
+# Conversion settings
+conversion:
+  batch_size: 10
+  timeout: 300
+  max_workers: 4
+
+# Paths
+paths:
+  temp_dir: "./temp"
+  output_dir: "./output"
+
+# Logging configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# LibreOffice settings
+libreoffice:
+  timeout: 300
+  headless: true
+
+# wkhtmltopdf settings
+wkhtmltopdf:
+  page_size: "A4"
+  margin_top: "0.75in"
+  margin_right: "0.75in"
+  margin_bottom: "0.75in"
+  margin_left: "0.75in"
+  encoding: "UTF-8"

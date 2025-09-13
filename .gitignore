@@ -127,3 +127,33 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Project-specific
+temp/
+output/
+*.backup
+*.tmp
+*.orig
+results/
+
+# OS-specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE-specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Generated files
+page*.jpg
+page*.png
+*.pdf
+*.html
+!examples/sample_documents/*
