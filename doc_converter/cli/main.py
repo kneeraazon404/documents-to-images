@@ -5,8 +5,6 @@ Command-line interface for document converter.
 import argparse
 import logging
 import sys
-from pathlib import Path
-from typing import List, Optional
 
 from ..core.batch_processor import BatchProcessor
 from ..core.document_converter import DocumentConverter
