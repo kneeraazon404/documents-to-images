@@ -1,4 +1,4 @@
-# 🎉 Documents to Images Converter - PyPI Ready!
+# 🎉 Documents to Images Converter - PyPI Ready
 
 ## ✅ Project Status
 
@@ -7,12 +7,14 @@ Your **Documents to Images Converter** project has been successfully transformed
 ## 🚀 What's Been Accomplished
 
 ### 📦 **Package Structure & Modularization**
+
 - ✅ Created professional modular structure (`doc_converter/core`, `utils`, `cli`)
 - ✅ Implemented all core converters (PDF→Images, DOCX→PDF, PPTX→PDF, etc.)
 - ✅ Added batch processing capabilities
 - ✅ Built comprehensive CLI interface with `doc-converter` command
 
 ### 📖 **Complete Documentation Suite**
+
 - ✅ **README.md**: Professional project overview with features, installation, usage
 - ✅ **Sphinx Documentation**: Full docs with API reference, examples, troubleshooting
   - Installation guide
@@ -25,6 +27,7 @@ Your **Documents to Images Converter** project has been successfully transformed
 - ✅ **Built HTML docs** ready for ReadTheDocs hosting
 
 ### 🔧 **Modern Python Packaging**
+
 - ✅ **pyproject.toml**: Modern packaging configuration with all metadata
 - ✅ **MANIFEST.in**: Ensures all necessary files are included
 - ✅ **requirements.txt**: Clean production dependencies
@@ -33,6 +36,7 @@ Your **Documents to Images Converter** project has been successfully transformed
 - ✅ **Passes twine checks** - ready for PyPI upload
 
 ### ⚡ **CI/CD & Automation**
+
 - ✅ **GitHub Actions workflows**:
   - `.github/workflows/tests.yml`: Multi-platform, multi-Python version testing
   - `.github/workflows/publish.yml`: Automatic PyPI publishing on releases
@@ -40,6 +44,7 @@ Your **Documents to Images Converter** project has been successfully transformed
 - ✅ **Automated testing, linting, and formatting** setup
 
 ### 📋 **Additional Files**
+
 - ✅ **CHANGELOG.md**: Release history tracking
 - ✅ **PUBLISHING.md**: Step-by-step PyPI publishing guide
 - ✅ **Example code and sample documents**
@@ -47,7 +52,7 @@ Your **Documents to Images Converter** project has been successfully transformed
 
 ## 📁 Final Project Structure
 
-```
+```bash
 documents-to-images/
 ├── 📦 Package Core
 │   ├── doc_converter/           # Main package
@@ -115,11 +120,12 @@ documents-to-images/
     └── docs/sphinx/_build/ # Built documentation
 ```
 
-## 🎯 Ready for PyPI Publishing!
+## 🎯 Ready for PyPI Publishing
 
-### Next Steps:
+### Next Steps
 
 1. **Test the Package Locally**:
+
    ```bash
    cd /home/kneeraazon/documents-to-images
    source venv/bin/activate
@@ -128,11 +134,13 @@ documents-to-images/
    ```
 
 2. **Upload to Test PyPI** (Recommended first):
+
    ```bash
    twine upload --repository testpypi dist/*
    ```
 
 3. **Upload to Real PyPI**:
+
    ```bash
    twine upload dist/*
    ```
@@ -163,7 +171,7 @@ documents-to-images/
 pip install documents-to-images-converter
 ```
 
-## 🎉 Congratulations!
+## 🎉 Congratulations
 
 Your project has been successfully transformed from a simple script collection into a **professional, production-ready Python package** with:
 
