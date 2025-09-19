@@ -3,7 +3,6 @@ Main Document Converter class that orchestrates all conversion operations.
 """
 
 import logging
-import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Union
 
@@ -148,7 +147,9 @@ class DocumentConverter:
         )  # LibreOffice handles PPTX
 
     def txt_to_pdf(
-        self, txt_path: Union[str, Path], output_path: Optional[Union[str, Path]] = None
+        self,
+        txt_path: Union[str, Path],
+        output_path: Optional[Union[str, Path]] = None,
     ) -> str:
         """
         Convert TXT file to PDF.

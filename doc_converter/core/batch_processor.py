@@ -3,7 +3,6 @@ Batch processing utilities for handling multiple file conversions.
 """
 
 import logging
-import os
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -195,7 +194,10 @@ class BatchProcessor:
             # Submit all tasks
             future_to_file = {
                 executor.submit(
-                    self._convert_single_file, file_path, output_dir, target_format
+                    self._convert_single_file,
+                    file_path,
+                    output_dir,
+                    target_format,
                 ): file_path
                 for file_path in files
             }

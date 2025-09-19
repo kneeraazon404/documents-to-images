@@ -6,7 +6,7 @@ import logging
 import os
 import shutil
 from pathlib import Path
-from typing import List, Optional, Union
+from typing import List, Union
 
 logger = logging.getLogger(__name__)
 
@@ -162,7 +162,9 @@ class FileHandler:
 
     @staticmethod
     def find_files(
-        directory: Union[str, Path], patterns: List[str], recursive: bool = True
+        directory: Union[str, Path],
+        patterns: List[str],
+        recursive: bool = True,
     ) -> List[Path]:
         """
         Find files matching patterns in directory.

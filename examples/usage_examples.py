@@ -92,13 +92,13 @@ def example_batch_conversion():
             progress_callback=progress_callback,
         )
 
-        print(f"\n📊 Batch conversion results:")
+        print("\n📊 Batch conversion results:")
         print(f"   ✅ Successful: {results['successful']}")
         print(f"   ❌ Failed: {results['failed']}")
         print(f"   📈 Total: {results['total_files']}")
 
         if results["errors"]:
-            print(f"\nErrors:")
+            print("\nErrors:")
             for error in results["errors"]:
                 print(f"   - {error['file']}: {error['error']}")
 

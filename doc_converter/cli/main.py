@@ -62,7 +62,7 @@ def convert_docx_to_pdf(args):
             docx_path=args.input, output_path=args.output
         )
 
-        print(f"✅ Successfully converted DOCX to PDF")
+        print("✅ Successfully converted DOCX to PDF")
         print(f"📄 Output file: {output_file}")
 
     except Exception as e:
@@ -79,7 +79,7 @@ def convert_pptx_to_pdf(args):
             pptx_path=args.input, output_path=args.output
         )
 
-        print(f"✅ Successfully converted PPTX to PDF")
+        print("✅ Successfully converted PPTX to PDF")
         print(f"📄 Output file: {output_file}")
 
     except Exception as e:
@@ -94,7 +94,7 @@ def convert_txt_to_pdf(args):
     try:
         output_file = converter.txt_to_pdf(txt_path=args.input, output_path=args.output)
 
-        print(f"✅ Successfully converted TXT to PDF")
+        print("✅ Successfully converted TXT to PDF")
         print(f"📄 Output file: {output_file}")
 
     except Exception as e:
@@ -113,7 +113,7 @@ def convert_html_to_pdf(args):
             options=getattr(args, "options", None),
         )
 
-        print(f"✅ Successfully converted HTML to PDF")
+        print("✅ Successfully converted HTML to PDF")
         print(f"📄 Output file: {output_file}")
 
     except Exception as e:
@@ -130,7 +130,7 @@ def convert_docx_to_html(args):
             docx_path=args.input, output_path=args.output
         )
 
-        print(f"✅ Successfully converted DOCX to HTML")
+        print("✅ Successfully converted DOCX to HTML")
         print(f"📄 Output file: {output_file}")
 
     except Exception as e:
@@ -143,7 +143,7 @@ def batch_convert(args):
     processor = BatchProcessor(max_workers=args.workers)
 
     try:
-        print(f"🚀 Starting batch conversion...")
+        print("🚀 Starting batch conversion...")
         print(f"📂 Input: {args.input_dir}")
         print(f"📁 Output: {args.output_dir}")
         print(f"🎯 Target format: {args.format}")
@@ -157,13 +157,13 @@ def batch_convert(args):
             progress_callback=progress_callback,
         )
 
-        print(f"\n📊 Batch conversion completed:")
+        print("\n📊 Batch conversion completed:")
         print(f"   ✅ Successful: {results['successful']}")
         print(f"   ❌ Failed: {results['failed']}")
         print(f"   📈 Total: {results['total_files']}")
 
         if results["errors"]:
-            print(f"\n❌ Errors:")
+            print("\n❌ Errors:")
             for error in results["errors"]:
                 print(f"   - {error['file']}: {error['error']}")
 
@@ -175,21 +175,23 @@ def batch_convert(args):
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
-        description="Document Converter - Convert documents between various formats",
+        description=("Document Converter - Convert documents between various formats"),
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   # Convert PDF to images
-  python -m doc_converter pdf-to-images document.pdf --output-dir ./images --format jpeg --dpi 300
-  
+  python -m doc_converter pdf-to-images document.pdf \\
+    --output-dir ./images --format jpeg --dpi 300
+
   # Convert DOCX to PDF
   python -m doc_converter docx-to-pdf document.docx --output document.pdf
-  
+
   # Convert HTML to PDF
   python -m doc_converter html-to-pdf https://example.com --output webpage.pdf
-  
+
   # Batch convert directory
-  python -m doc_converter batch-convert --input-dir ./docs --output-dir ./converted --format pdf
+  python -m doc_converter batch-convert --input-dir ./docs \\
+    --output-dir ./converted --format pdf
         """,
     )
 
@@ -208,7 +210,11 @@ Examples:
         "--output-dir", "-o", help="Output directory for images"
     )
     pdf_to_img_parser.add_argument(
-        "--format", "-f", choices=["jpeg", "png"], default="jpeg", help="Output format"
+        "--format",
+        "-f",
+        choices=["jpeg", "png"],
+        default="jpeg",
+        help="Output format",
     )
     pdf_to_img_parser.add_argument(
         "--dpi", type=int, default=200, help="Resolution in DPI"
@@ -271,7 +277,9 @@ Examples:
         help="Target format",
     )
     batch_parser.add_argument(
-        "--patterns", nargs="+", help="File patterns to include (e.g., *.docx *.pdf)"
+        "--patterns",
+        nargs="+",
+        help="File patterns to include (e.g., *.docx *.pdf)",
     )
     batch_parser.add_argument(
         "--recursive", "-r", action="store_true", help="Process subdirectories"

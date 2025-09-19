@@ -51,7 +51,10 @@ class TestPDFConverter:
         output_dir.mkdir(parents=True, exist_ok=True)
 
         result = converter.to_images(
-            pdf_path=sample_pdf_path, output_dir=output_dir, format="jpeg", dpi=200
+            pdf_path=sample_pdf_path,
+            output_dir=output_dir,
+            format="jpeg",
+            dpi=200,
         )
 
         # Verify conversion was called with correct parameters
@@ -63,11 +66,17 @@ class TestPDFConverter:
         mock_image.save.assert_called()
         assert len(result) == 2
 
-    def test_to_images_invalid_format(self, converter, sample_pdf_path, output_dir):
+    def test_to_images_invalid_format(
+        self, converter, sample_pdf_path, output_dir
+    ):
         """Test PDF to images conversion with invalid format."""
-        with pytest.raises(Exception):  # Should raise some exception for invalid format
+        with pytest.raises(
+            Exception
+        ):  # Should raise some exception for invalid format
             converter.to_images(
-                pdf_path=sample_pdf_path, output_dir=output_dir, format="invalid_format"
+                pdf_path=sample_pdf_path,
+                output_dir=output_dir,
+                format="invalid_format",
             )
 
     @patch("doc_converter.core.pdf_converter.convert_from_path")
@@ -81,7 +90,10 @@ class TestPDFConverter:
         output_dir.mkdir(parents=True, exist_ok=True)
 
         converter.to_images(
-            pdf_path=sample_pdf_path, output_dir=output_dir, first_page=1, last_page=1
+            pdf_path=sample_pdf_path,
+            output_dir=output_dir,
+            first_page=1,
+            last_page=1,
         )
 
         mock_convert.assert_called_once_with(
@@ -89,7 +101,9 @@ class TestPDFConverter:
         )
 
     @patch("PyPDF2.PdfReader")
-    def test_get_page_count_success(self, mock_pdf_reader, converter, sample_pdf_path):
+    def test_get_page_count_success(
+        self, mock_pdf_reader, converter, sample_pdf_path
+    ):
         """Test getting page count from PDF."""
         mock_reader = Mock()
         mock_reader.pages = [Mock(), Mock(), Mock()]  # 3 pages

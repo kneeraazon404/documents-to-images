@@ -3,7 +3,6 @@ DOCX conversion utilities for converting DOCX files to various formats.
 """
 
 import logging
-import os
 import subprocess
 from pathlib import Path
 from typing import Union
@@ -104,7 +103,10 @@ class DOCXConverter:
             ]
 
             result = subprocess.run(
-                cmd, capture_output=True, text=True, timeout=300  # 5 minutes timeout
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=300,  # 5 minutes timeout
             )
 
             if result.returncode != 0:
@@ -113,7 +115,8 @@ class DOCXConverter:
                     result.returncode, cmd, result.stdout, result.stderr
                 )
 
-            # LibreOffice creates file with same name as input but .pdf extension
+            # LibreOffice creates file with same name as input but .pdf
+            # extension
             generated_pdf = output_dir / f"{input_path.stem}.pdf"
 
             # Rename to desired output name if different

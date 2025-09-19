@@ -69,7 +69,9 @@ class Config:
         config_path = Path(config_path)
 
         if not config_path.exists():
-            raise FileNotFoundError(f"Configuration file not found: {config_path}")
+            raise FileNotFoundError(
+                f"Configuration file not found: {config_path}"
+            )
 
         try:
             with open(config_path, "r", encoding="utf-8") as f:
@@ -95,7 +97,9 @@ class Config:
 
         try:
             with open(config_path, "w", encoding="utf-8") as f:
-                yaml.dump(self.config_data, f, default_flow_style=False, indent=2)
+                yaml.dump(
+                    self.config_data, f, default_flow_style=False, indent=2
+                )
 
             logger.info(f"Configuration saved to: {config_path}")
 
@@ -145,7 +149,9 @@ class Config:
         config[keys[-1]] = value
         logger.debug(f"Set configuration: {key} = {value}")
 
-    def _merge_config(self, base: Dict[str, Any], override: Dict[str, Any]) -> None:
+    def _merge_config(
+        self, base: Dict[str, Any], override: Dict[str, Any]
+    ) -> None:
         """
         Recursively merge configuration dictionaries.
 
@@ -154,7 +160,11 @@ class Config:
             override: Override configuration dictionary
         """
         for key, value in override.items():
-            if key in base and isinstance(base[key], dict) and isinstance(value, dict):
+            if (
+                key in base
+                and isinstance(base[key], dict)
+                and isinstance(value, dict)
+            ):
                 self._merge_config(base[key], value)
             else:
                 base[key] = value

@@ -58,7 +58,9 @@ class TestDOCXConverter:
                 DOCXConverter()
 
     @patch("subprocess.run")
-    def test_to_pdf_success(self, mock_run, converter, sample_docx_path, output_path):
+    def test_to_pdf_success(
+        self, mock_run, converter, sample_docx_path, output_path
+    ):
         """Test successful DOCX to PDF conversion."""
         # Mock successful subprocess run
         mock_run.return_value = Mock(returncode=0, stdout="", stderr="")
@@ -93,7 +95,9 @@ class TestDOCXConverter:
             converter.to_pdf(sample_docx_path, output_path)
 
     @patch("subprocess.run")
-    def test_to_pdf_timeout(self, mock_run, converter, sample_docx_path, output_path):
+    def test_to_pdf_timeout(
+        self, mock_run, converter, sample_docx_path, output_path
+    ):
         """Test DOCX to PDF conversion timeout."""
         import subprocess
 
@@ -125,7 +129,9 @@ class TestDOCXConverter:
         mock_file.assert_called()
 
     @patch(
-        "builtins.open", new_callable=mock_open, read_data="Test content\nSecond line\n"
+        "builtins.open",
+        new_callable=mock_open,
+        read_data="Test content\nSecond line\n",
     )
     def test_txt_to_pdf_success(
         self, mock_file, converter, sample_txt_path, output_path
@@ -151,5 +157,7 @@ class TestDOCXConverter:
         non_existent = tmp_path / "non_existent.txt"
         output_path = tmp_path / "output.pdf"
 
-        with pytest.raises(Exception):  # Should raise FileNotFoundError or similar
+        with pytest.raises(
+            Exception
+        ):  # Should raise FileNotFoundError or similar
             converter.txt_to_pdf(non_existent, output_path)

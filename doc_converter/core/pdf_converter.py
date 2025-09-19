@@ -7,7 +7,6 @@ from pathlib import Path
 from typing import List, Union
 
 from pdf2image import convert_from_path
-from PIL import Image
 
 logger = logging.getLogger(__name__)
 
@@ -85,7 +84,10 @@ class PDFConverter:
                 output_files.append(str(output_path))
                 logger.info(f"Saved: {output_path}")
 
-            logger.info(f"Successfully converted {len(images)} pages to {format}")
+            logger.info(
+                f"Successfully converted {
+                    len(images)} pages to {format}"
+            )
             return output_files
 
         except Exception as e:

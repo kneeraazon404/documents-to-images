@@ -77,20 +77,20 @@ def batch_processing_with_progress():
             progress_callback=detailed_progress,
         )
 
-        print(f"\n📊 Detailed Results:")
+        print("\n📊 Detailed Results:")
         print(f"   📁 Total files found: {results['total_files']}")
         print(f"   ✅ Successfully converted: {results['successful']}")
         print(f"   ❌ Failed conversions: {results['failed']}")
 
         if results["successful"] > 0:
-            print(f"\n✨ Successful conversions:")
+            print("\n✨ Successful conversions:")
             for result in results["results"][:3]:  # Show first 3
                 input_file = Path(result["input_file"]).name
                 output_file = Path(result["output_file"]).name
                 print(f"   📄 {input_file} → {output_file}")
 
         if results["errors"]:
-            print(f"\n💥 Errors encountered:")
+            print("\n💥 Errors encountered:")
             for error in results["errors"][:3]:  # Show first 3
                 filename = Path(error["file"]).name
                 print(f"   ❌ {filename}: {error['error'][:60]}...")
@@ -166,7 +166,11 @@ def demonstrate_format_support():
             "docx_to_pdf",
             "output/demo_docx.pdf",
         ),
-        ("examples/sample_documents/sample.txt", "txt_to_pdf", "output/demo_txt.pdf"),
+        (
+            "examples/sample_documents/sample.txt",
+            "txt_to_pdf",
+            "output/demo_txt.pdf",
+        ),
         (
             "examples/sample_documents/sample.docx",
             "docx_to_html",
@@ -190,7 +194,9 @@ def demonstrate_format_support():
                 result = converter.docx_to_html(input_file, output_file)
 
             print(
-                f"✅ {conversion_type}: {Path(input_file).name} → {Path(result).name}"
+                f"✅ {conversion_type}: {
+                    Path(input_file).name} → {
+                    Path(result).name}"
             )
 
         except Exception as e:
@@ -226,10 +232,10 @@ def configuration_example():
     config.save_to_file(config_file)
     print(f"💾 Configuration saved to: {config_file}")
 
-    # Load configuration
-    new_config = Config(config_file)
-    converter = DocumentConverter(config_file)
-    print(f"✅ Loaded custom configuration for converter")
+    # Load configuration to demonstrate usage
+    Config(config_file)  # Demonstrate loading config
+    DocumentConverter(config_file)  # Demonstrate with config
+    print("✅ Loaded custom configuration for converter")
 
 
 def error_handling_example():
@@ -265,11 +271,15 @@ def error_handling_example():
 
     try:
         results = processor.convert_file_list(
-            file_list=test_files, output_dir="output/error_test", target_format="pdf"
+            file_list=test_files,
+            output_dir="output/error_test",
+            target_format="pdf",
         )
 
         print(
-            f"📊 Mixed results: {results['successful']} success, {results['failed']} failures"
+            f"📊 Mixed results: {
+                results['successful']} success, {
+                results['failed']} failures"
         )
 
     except Exception as e:
@@ -292,7 +302,7 @@ def main():
     error_handling_example()
 
     print("\n🎉 All advanced examples completed!")
-    print(f"📁 Check the 'output' directory for generated files")
+    print("📁 Check the 'output' directory for generated files")
 
 
 if __name__ == "__main__":

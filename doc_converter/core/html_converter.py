@@ -113,7 +113,9 @@ class HTMLConverter:
             # Configuration for pdfkit
             config = None
             if self.wkhtmltopdf_path:
-                config = pdfkit.configuration(wkhtmltopdf=self.wkhtmltopdf_path)
+                config = pdfkit.configuration(
+                    wkhtmltopdf=self.wkhtmltopdf_path
+                )
 
             # Determine if input is URL or file path
             if html_source.startswith(("http://", "https://")):
@@ -129,7 +131,9 @@ class HTMLConverter:
                 # File path
                 html_path = Path(html_source)
                 if not html_path.exists():
-                    raise FileNotFoundError(f"HTML file not found: {html_path}")
+                    raise FileNotFoundError(
+                        f"HTML file not found: {html_path}"
+                    )
 
                 logger.info(f"Converting HTML file: {html_path}")
                 pdfkit.from_file(
@@ -200,7 +204,9 @@ class HTMLConverter:
             # Configuration for pdfkit
             config = None
             if self.wkhtmltopdf_path:
-                config = pdfkit.configuration(wkhtmltopdf=self.wkhtmltopdf_path)
+                config = pdfkit.configuration(
+                    wkhtmltopdf=self.wkhtmltopdf_path
+                )
 
             # Convert HTML string to PDF
             pdfkit.from_string(
