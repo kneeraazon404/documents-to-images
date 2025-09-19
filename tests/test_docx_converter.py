@@ -2,6 +2,7 @@
 Tests for DOCX converter functionality.
 """
 
+import subprocess
 from pathlib import Path
 from unittest.mock import Mock, mock_open, patch
 
@@ -130,7 +131,7 @@ class TestDOCXConverter:
         self, mock_file, converter, sample_txt_path, output_path
     ):
         """Test successful TXT to PDF conversion."""
-        with patch("fpdf.FPDF") as mock_fpdf:
+        with patch("doc_converter.core.docx_converter.FPDF") as mock_fpdf:
             mock_pdf_instance = Mock()
             mock_fpdf.return_value = mock_pdf_instance
 

@@ -88,7 +88,7 @@ class TestPDFConverter:
             sample_pdf_path, dpi=200, first_page=1, last_page=1
         )
 
-    @patch("doc_converter.core.pdf_converter.PdfReader")
+    @patch("PyPDF2.PdfReader")
     def test_get_page_count_success(self, mock_pdf_reader, converter, sample_pdf_path):
         """Test getting page count from PDF."""
         mock_reader = Mock()
@@ -100,7 +100,7 @@ class TestPDFConverter:
         assert count == 3
         mock_pdf_reader.assert_called_once_with(str(sample_pdf_path))
 
-    @patch("doc_converter.core.pdf_converter.PdfReader")
+    @patch("PyPDF2.PdfReader")
     @patch("doc_converter.core.pdf_converter.convert_from_path")
     def test_get_page_count_fallback(
         self, mock_convert, mock_pdf_reader, converter, sample_pdf_path
