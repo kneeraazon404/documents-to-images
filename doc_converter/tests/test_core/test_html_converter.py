@@ -3,6 +3,8 @@ def test_html_conversion():
     expected_output = "Hello World"
     assert convert_html_to_text(input_data) == expected_output
 
+
 def convert_html_to_text(html):
     from bs4 import BeautifulSoup
+
     return BeautifulSoup(html, "html.parser").get_text()
